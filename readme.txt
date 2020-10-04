@@ -12,7 +12,7 @@ Allows you to insert ads after paragraphs of your post content, throughout your 
 
 == Description ==
 
-Multisite Ads for PressBooks allow you to automatically insert ads after paragraphs of your post content throughout your multisite network. This saves you the hassle of manually entering ads in each of your post, or installing a plugin on each inidivual site. This plugin is a fork of the original LH Multisite Ads which is also a fork of <a href="https://wordpress.org/plugins/insert-post-ads/" title="WordPress Insert Post Ads" rel="friend">WordPress Insert Post Ads</a> plugin, but was forked to allow ads to be added in one place and displayed throughout the network.
+Multisite Ads for PressBooks allow you to automatically insert ads after paragraphs of your post content throughout your multisite network. This saves you the hassle of manually entering ads in each of your post, or installing a plugin on each inidivual site. This plugin is a fork of the original Multisite ads for PB which is also a fork of <a href="https://wordpress.org/plugins/insert-post-ads/" title="WordPress Insert Post Ads" rel="friend">WordPress Insert Post Ads</a> plugin, but was forked to allow ads to be added in one place and displayed throughout the network.
 
 Inline content ads get the best click through rate. If you want to increase your CTR and Ad revenue, then you need to start adding ads within your post content.
 

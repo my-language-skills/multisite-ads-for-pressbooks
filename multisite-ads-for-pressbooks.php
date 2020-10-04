@@ -6,7 +6,7 @@
 * Author: Peter Shaw
 * Author URI: https://-----.com
 * Network: true
-* Description: Allows you to insert ads after paragraphs of your post content throughout your multisite network. Base on LH Multisite Ads 1.26
+* Description: Allows you to insert ads after paragraphs of your post content throughout your multisite network. Base on Multisite ads for PB 1.26
 * License: GPL2
 */
 
@@ -14,19 +14,19 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 /**
-* LH Multisite Ads Class
+* Multisite ads for PB Class
 */
 
 
-if (!class_exists('LH_multisite_ads_plugin')) {
+if (!class_exists('mu_ads_for_pb_plugin')) {
 
-class LH_multisite_ads_plugin {
+class mu_ads_for_pb_plugin {
 
-var $opt_name = 'lh_multisite_ads-options';
-var $posttype = 'lh-multisite-ads';
-var $namespace = 'lh_multisite_ads';
-var $whitelisted_sites_field_name = 'lh_multisite_ads-whitelisted_sites_field_name';
-var $ads_on_indexes_field_name = 'lh_multisite_ads-ads_on_indexes_field_name';
+var $opt_name = 'mu_ads_for_pb-options';
+var $posttype = 'mu-ads-for-pb';
+var $namespace = 'mu_ads_for_pb';
+var $whitelisted_sites_field_name = 'mu_ads_for_pb-whitelisted_sites_field_name';
+var $ads_on_indexes_field_name = 'mu_ads_for_pb-ads_on_indexes_field_name';
 
 var $options;
 var $filename;
@@ -222,7 +222,7 @@ public function plugin_menu() {
 
 if (is_main_site()){
 
-add_submenu_page('edit.php?post_type='.$this->posttype, __('LH Multisite Ads', $this->namespace), __('Settings', $this->namespace), 'manage_options', $this->filename, array($this, 'plugin_options'));
+add_submenu_page('edit.php?post_type='.$this->posttype, __('Multisite ads for PB', $this->namespace), __('Settings', $this->namespace), 'manage_options', $this->filename, array($this, 'plugin_options'));
 
 }
 
@@ -270,7 +270,7 @@ $this->options = get_site_option($this->opt_name);
 
 
 ?>
-<div class="updated"><p><strong><?php _e('LH Post Ads settings saved', $this->namespace ); ?></strong></p></div>
+<div class="updated"><p><strong><?php _e('MU Post Ads for PB settings saved', $this->namespace ); ?></strong></p></div>
 <?php
 
 }
@@ -368,13 +368,13 @@ if  (is_singular()){
 
 $ad_ads = true;
 
-$ad_ads = apply_filters('lh_multisite_ads_filter_ad_ads', $ad_ads, $content);
+$ad_ads = apply_filters('mu_ads_for_pb_filter_ad_ads', $ad_ads, $content);
 
 if (isset($ad_ads) and ($ad_ads === TRUE)){
 
 $ads = $this->return_query();
 
-$ads = apply_filters('lh_multisite_ads_filter_returned_ads', $ads);
+$ads = apply_filters('mu_ads_for_pb_filter_returned_ads', $ads);
 
 			foreach($ads as $ad) {
 
@@ -405,12 +405,12 @@ $ads = apply_filters('lh_multisite_ads_filter_returned_ads', $ads);
 
     if ($this->options[$this->ads_on_indexes_field_name] == 1){
 
-        if (!isset($GLOBALS['lh_multisite_ads-all_ads'])){
+        if (!isset($GLOBALS['mu_ads_for_pb-all_ads'])){
 
-       $GLOBALS['lh_multisite_ads-all_ads'] = $this->return_query();
+       $GLOBALS['mu_ads_for_pb-all_ads'] = $this->return_query();
 
 
-       $ads =  $GLOBALS['lh_multisite_ads-all_ads'];
+       $ads =  $GLOBALS['mu_ads_for_pb-all_ads'];
 
         }
 
@@ -419,8 +419,8 @@ $ads = apply_filters('lh_multisite_ads_filter_returned_ads', $ads);
 $i = 0;
 while ($i < count($ads)) {
 
-unset($GLOBALS['lh_multisite_ads-all_ads'][$i]);
-$GLOBALS['lh_multisite_ads-all_ads'] = array_values($GLOBALS['lh_multisite_ads-all_ads']);
+unset($GLOBALS['mu_ads_for_pb-all_ads'][$i]);
+$GLOBALS['mu_ads_for_pb-all_ads'] = array_values($GLOBALS['mu_ads_for_pb-all_ads']);
 
 
    $i++;
@@ -557,7 +557,7 @@ add_action( 'plugins_loaded', array($this,'plugins_loaded'));
 
 }
 
-$lh_multisite_ads_instance = LH_multisite_ads_plugin::get_instance();
+$mu_ads_for_pb_instance = mu_ads_for_pb_plugin::get_instance();
 
 }
 

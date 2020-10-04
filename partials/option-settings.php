@@ -1,5 +1,5 @@
 <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
-<form name="lh_multisite_ads-backend_form" method="post" action="">
+<form name="mu_ads_for_pb-backend_form" method="post" action="">
 <?php wp_nonce_field( $this->namespace."-backend_nonce", $this->namespace."-backend_nonce", false ); ?>
 
 
